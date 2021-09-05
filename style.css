@@ -82,7 +82,7 @@ section.intro-overlay h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20vw 0px;
+    padding: 20vw 0px 10vw 0px;
 }
 
 .hero-wrapper{

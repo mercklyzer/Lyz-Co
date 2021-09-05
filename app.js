@@ -26,11 +26,11 @@ tl.from('.header-1', {
     duration: 0.5
 })
 .from('.top-header-1', {
-    yPercent: 20,
+    y: '20%',
     opacity: 0,
 })
 .from('.top-header-2', {
-    yPercent: 20,
+    y: '20%',
     opacity: 0,
 })
 .from('.hero-wrapper img', {
@@ -44,8 +44,7 @@ tl.from('.header-1', {
 })
 
 ScrollTrigger.defaults({
-
-    markers: true,
+    markers: true
 })
 
 gsap.to('.top-header-1', {
