@@ -21,7 +21,8 @@ tl.from('.header-1', {
     duration: 0.5
 }, 6)
 .to('.intro-overlay', {
-    opacity: 0
+    opacity: 0,
+    zIndex: -1
 })
 
 

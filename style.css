@@ -44,6 +44,36 @@ section.intro-overlay h1{
     /* border: 2px solid red; */
 }
 
+.navbar{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+.nav{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    text-transform: uppercase;
+}
+
+.nav.middle{
+    font-weight: 400;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav.right ion-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.nav span{
+    color: #eb5b2b;
+}
+
 .hero{
     border: 2px solid red;
     height: 100vh;
