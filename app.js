@@ -23,7 +23,12 @@ tl.from('.header-1', {
 .to('.intro-overlay', {
     opacity: 0,
     zIndex: -1,
-    duration: 0.5
+    duration: 0.5,
+    onComplete: () => {
+        window.scrollTo(0,0);
+        document.querySelector('body').style.overflow = 'auto';
+        console.log("updated height");
+    }
 })
 .from('.top-header-1', {
     y: '20%',
@@ -44,7 +49,7 @@ tl.from('.header-1', {
 })
 
 ScrollTrigger.defaults({
-    markers: true
+    // markers: true
 })
 
 gsap.to('.top-header-1', {

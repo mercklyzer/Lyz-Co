@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
-html, body{
+body{
     width: 100%;
     background-color: #f7f3f0;
+    overflow:hidden;
 }
 
 section.intro-overlay{
