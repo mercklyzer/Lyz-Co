@@ -23,6 +23,8 @@ section.intro-overlay{
     align-items: center;
 }
 
+
+
 .header-wrapper{
     /* border: 2px solid blue; */
     height: 5vw;
@@ -57,12 +59,26 @@ section.intro-overlay h1{
 .nav{
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     text-transform: uppercase;
+    /* border: 2px solid red; */
+    flex-grow: 1;
+    width: 0; /* to divide the flexbox equally */
+    display: flex;
+    align-items: center;
+}
+
+.nav.left{
+    justify-content: flex-start;
 }
 
 .nav.middle{
     font-weight: 400;
     font-size: 24px;
     cursor: pointer;
+    justify-content: center;
+}
+
+.nav.right{
+    justify-content: flex-end;
 }
 
 .nav.right ion-icon{
@@ -117,21 +133,68 @@ section.intro-overlay h1{
 }
 
 .hero-wrapper .image-container{
-    width: 100%;
+    /* width: 100%; */
     height: auto;
     overflow: hidden;
 }
 
 .hero-wrapper .image-container img{
     height: auto;
-    max-width: 40vw;
+    width: 40vw;
     overflow:hidden;
     object-fit:cover;
     /* border: 2px solid red; */
 }
 
-@media screen and (max-width: 766px){
+@media screen and (max-width: 768px){
+    .navbar{
+        height: 60px;
+        width: 100%;
+        padding: 30px 40px;
+    }
+
     .hero-wrapper img{
-        width: 70vw;
+        min-width: 70vw;
+    }
+
+    .bottom-header{
+        bottom: -4vw;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .header-wrapper{
+        height: 7vw;
+    }
+
+    section.intro-overlay h1{
+        font-size: 5vw;
+    }
+
+    .navbar{
+        height: 60px;
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .nav.left{
+        font-size: 3vw;
+    }
+
+    .nav.middle{
+        font-size: 4vw;
+    }
+
+    .nav.right ion-icon{
+        width: 20px;
+        height: 20px;
+    }
+
+    .hero-wrapper img{
+        min-width: 75vw;
+    }
+
+    .bottom-header{
+        bottom: -4vw;
     }
 }
