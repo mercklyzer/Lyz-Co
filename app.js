@@ -93,12 +93,12 @@ gsap.to('.hero-wrapper img', {
 
 
 // animations for about section
-gsap.from('.hr', {
+gsap.to('.hr-wrapper', {
     scrollTrigger: {
-        trigger: '.hr',
+        trigger: '.hr-wrapper',
         start: 'top bottom'
     },
-    width: 0,
+    width: '100%',
     transformOrigin: 'left center',
     ease: Power1.easeOut,
     duration: 2,
