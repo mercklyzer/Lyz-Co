@@ -23,8 +23,6 @@ section.intro-overlay{
     align-items: center;
 }
 
-
-
 .header-wrapper{
     /* border: 2px solid blue; */
     height: 5vw;
@@ -53,7 +51,7 @@ section.intro-overlay h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 80px;
+    padding: 30px 4vw;
 }
 
 .nav{
@@ -94,12 +92,11 @@ section.intro-overlay h1{
 .hero{
     /* border: 2px solid red; */
     min-height: calc(100vh - 60px);
-    /* height: 1000px; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20vw 0px 10vw 0px;
+    padding: calc(20vw + 60px) 0px 10vw 0px;
 }
 
 .hero-wrapper{
@@ -157,7 +154,7 @@ section.intro-overlay h1{
 }
 
 .about{
-    padding: 200px 80px 100px 80px;
+    padding: 8vw 4vw 8vw 4vw;
     display: flex;
     height: 100% !important;
 }
@@ -170,18 +167,18 @@ section.intro-overlay h1{
 }
 
 .about-desktop .left-col{
-    padding: 0px 0px 0px 160px;
+    padding: 0px 0px 0px 8vw;
 }
 
 .about-desktop .label-wrapper{
-    margin-bottom: 160px;
+    margin-bottom: 12vw;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-size: 1vw;
     color: #1f1f1f;
 }
 
 .about-desktop .counter{
-    margin-right: 80px;
+    margin-right: 8vw;
 }
 
 .about-desktop .left-col .image-wrapper{
@@ -193,7 +190,7 @@ section.intro-overlay h1{
     object-fit: cover;
     width: 100%;
     height: auto;
-    padding-top: 100%;
+    padding-top: 90%;
 }
 
 .about-desktop .right-col h1{
@@ -205,7 +202,7 @@ section.intro-overlay h1{
 
 .about-desktop .right-col h2{
     font-family: 'IBM Plex Sans Arabic', sans-serif;
-    margin: 100px 0px;
+    margin: 6vw 0px 4vw 0vw;
     font-weight: 400;
     font-size: 1.5vw;
     color: #1f1f1f;
@@ -224,7 +221,8 @@ section.intro-overlay h1{
 }
 
 .infinity{
-    height: 500px;
+    margin: 4vw 0vw 6vw 0vw;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
