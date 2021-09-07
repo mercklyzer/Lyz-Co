@@ -103,20 +103,16 @@ section.intro-overlay h1{
 }
 
 .hero-wrapper{
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     position: relative;
-    /* overflow: hidden; */
-    /* padding: 0px 200px; */
 }
 
 .top-header, .bottom-header{
     font-family: 'EB Garamond', serif;
-    /* font-weight: 300; */
     font-size: 10vw;
     text-align: center;
     text-transform: uppercase;
@@ -133,7 +129,6 @@ section.intro-overlay h1{
 }
 
 .hero-wrapper .image-container{
-    /* width: 100%; */
     height: auto;
     overflow: hidden;
 }
@@ -162,13 +157,16 @@ section.intro-overlay h1{
 }
 
 .about{
-    /* border: 2px solid red; */
     padding: 200px 80px 100px 80px;
+    display: flex;
+    height: 100% !important;
 }
 
 .about-desktop{
     display: flex;
     justify-content: space-between;
+    /* border: 2px solid red; */
+    width: 100%;
 }
 
 .about-desktop .left-col{
@@ -195,6 +193,7 @@ section.intro-overlay h1{
     object-fit: cover;
     width: 100%;
     height: auto;
+    padding-top: 100%;
 }
 
 .about-desktop .right-col h1{
@@ -222,6 +221,33 @@ section.intro-overlay h1{
     object-fit: cover;
     width: 100%;
     height: auto;
+}
+
+.infinity{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'EB Garamond', serif;
+    font-size: 5vw;
+    overflow: hidden;
+}
+
+.infinity .line-1,
+.infinity .line-2{
+    width: 100%;
+    /* border: 2px solid red; */
+    white-space: nowrap;
+}
+
+.infinity .line-1{
+    margin-right: -20%;
+}
+
+.infinity .line-2{
+    margin-left: -20%;
 }
 
 @media screen and (max-width: 768px){
