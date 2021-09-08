@@ -283,10 +283,6 @@ section.intro-overlay h1{
     transition: 0.4s;
 }
 
-.expertise-item:hover{
-    background-color: #D2D0CF;
-}
-
 .item-counter, .item-label-container{
     flex-basis: 50%;
     display: flex;
@@ -399,22 +395,23 @@ section.intro-overlay h1{
     }
     
     .item-counter{
-        font-size: 5vw;
+        font-size: 7vw;
         letter-spacing: -0.2vw;
     }
     
     .item-label-container{
+        font-size: 4vw;
+        font-weight: 400;
+    }
+    
+    .item-sub-label{
         font-size: 3vw;
         font-weight: 500;
     }
     
-    .item-sub-label{
-        font-size: 2vw;
-        font-weight: 500;
-    }
-    
     .item-detail{
-        font-size: 1.5vw;
+        margin-top: 3vw;
+        font-size: 2.5vw;
         font-weight: 500;
     }
         
@@ -463,5 +460,37 @@ section.intro-overlay h1{
 
     .hr-wrapper{
         height: 2px;
+    }
+
+    .about-desktop .label-wrapper{
+        margin-bottom: 35vw;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-size: 1vw;
+        color: #1f1f1f;
+    }
+
+    .about-desktop .right-col{
+        flex-basis: 55%;
+    }
+
+    .about-desktop .right-col h1{
+        font-size: 8vw;
+    }
+
+    .about-desktop .right-col h2{
+        margin: 6vw 0px 8vw 0vw;
+        font-size: 4vw;
+    }
+
+    .about-desktop .right-col .image-wrapper{
+        width:40vw;
+    }
+
+    .item-counter{
+        flex-basis: 20%;
+    }
+
+    .item-label-container{
+        flex-basis: 80%;
     }
 }
