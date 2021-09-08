@@ -25,7 +25,6 @@ section.intro-overlay{
 }
 
 .header-wrapper{
-    /* border: 2px solid blue; */
     height: 5vw;
     width: 100%;
     position: relative;
@@ -91,7 +90,6 @@ section.intro-overlay h1{
 }
 
 .hero{
-    /* border: 2px solid red; */
     min-height: calc(100vh - 60px);
     width: 100%;
     display: flex;
@@ -250,7 +248,6 @@ section.intro-overlay h1{
 
 .expertise{
     padding: 0vw 0vw 8vw 0vw;
-    /* border: 2px solid red; */
 }
 
 .expertise-header{
@@ -278,12 +275,16 @@ section.intro-overlay h1{
 
 .expertise-items{
     cursor: pointer;
-    /* border: 2px solid red; */
 }
 
 .expertise-item{
     display: flex;
     padding: 4vw 0;
+    transition: 0.4s;
+}
+
+.expertise-item:hover{
+    background-color: #D2D0CF;
 }
 
 .item-counter, .item-label-container{
@@ -299,7 +300,6 @@ section.intro-overlay h1{
     justify-content: flex-start;
     align-items: center;
     letter-spacing: -0.5vw;
-    /* border: 2px solid red; */
 }
 
 .item-label-container{
@@ -310,29 +310,21 @@ section.intro-overlay h1{
 
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid red; */
-}
-
-.detail-container{
-    position: relative;
-    /* border: 2px solid red; */
 }
 
 .item-sub-label{
     color: #ea4f1b;
     font-size: 1vw;
     font-weight: 400;
-    /* height: 0;
-    opacity: 0; */
 }
 
 .item-detail{
-    /* border: 2px solid red; */
     margin-top: 1vw;
     opacity: 1;
     font-size: 1.1vw;
     font-weight: 400;
 }
+
 
 .item-button{
     transition: 0.4s;
@@ -354,6 +346,10 @@ section.intro-overlay h1{
         padding: 30px 0;
     }
 
+    .hero{
+        padding: 0;
+    }
+
     .hero-wrapper img{
         min-width: 70vw;
     }
@@ -361,6 +357,73 @@ section.intro-overlay h1{
     .bottom-header{
         bottom: -4vw;
     }
+
+    .label-wrapper, .expertise-header-label{
+        font-size: 3vw !important;
+    }
+
+    .about{
+        padding: 20vw 0 8vw 0;
+    }
+
+    .about-desktop .left-col{
+        flex-basis: 40%;
+    }
+
+    .about-desktop .right-col{
+        flex-basis: 50%;
+    }
+    
+    .about-desktop .right-col .image-wrapper{
+        width:35vw;
+    }
+
+    .about-desktop .right-col h1{
+        font-size: 6vw;
+    }
+    
+    .about-desktop .right-col h2{
+        margin: 6vw 0px 6vw 0vw;
+        font-size: 3vw;
+    }
+
+    .expertise-header{
+        margin-bottom: 8vw;
+    }
+
+    .item-counter{
+        flex-basis: 35%;
+    }
+    .item-label-container{
+        flex-basis: 65%;
+    }
+    
+    .item-counter{
+        font-size: 5vw;
+        letter-spacing: -0.2vw;
+    }
+    
+    .item-label-container{
+        font-size: 3vw;
+        font-weight: 500;
+    }
+    
+    .item-sub-label{
+        font-size: 2vw;
+        font-weight: 500;
+    }
+    
+    .item-detail{
+        font-size: 1.5vw;
+        font-weight: 500;
+    }
+        
+    .item-button ion-icon{
+        width: 6vw;
+        height: 6vw;
+    }
+
+
 }
 
 @media screen and (max-width: 480px){

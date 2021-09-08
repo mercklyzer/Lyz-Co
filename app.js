@@ -96,11 +96,12 @@ gsap.to('.hero-wrapper img', {
 
 let hrWrappers = document.querySelectorAll('.hr-wrapper')
 hrWrappers.forEach((hrWrapper, index) => {
+
+    console.log(hrWrapper);
     gsap.to(hrWrapper, {
         scrollTrigger: {
             trigger: hrWrapper,
-            start: 'top 90%',
-            // markers: true
+            start: 'center bottom',
         },
         width: '100%',
         transformOrigin: 'left center',
@@ -188,11 +189,12 @@ gsap.to('.infinity .line-2', {
 let expertiseAnim = gsap.from('.expertise', {
     scrollTrigger: {
         trigger: '.expertise',
-        start: 'top +=80%',
-        markers:true
+        start: 'top 90%',
+        // markers:true
     },
     y: '20%',
-    opacity: 0
+    opacity: 0,
+    onComplete: () => ScrollTrigger.refresh()
 })
 
 
@@ -203,7 +205,6 @@ let expertiseItems = document.querySelectorAll('.expertise-item')
 
 expertiseItems.forEach((expertiseItem, i) => {
     console.log(expertiseItem);
-    let detailContainer = expertiseItem.querySelector('.detail-container')
     let subLabel = expertiseItem.querySelector('.item-sub-label')
     let itemButton = expertiseItem.querySelector('.item-button')
 
@@ -236,7 +237,10 @@ expertiseItems.forEach((expertiseItem, i) => {
         itemTimeline.from(itemDetail, {
             opacity: 0,
         }, 0.1*(index+2))
+
     })
+
+
 
     // start code of toggling animation
     itemTimeline.reverse()
