@@ -1,53 +1,53 @@
 console.clear()
 
-let tl = gsap.timeline()
+// let tl = gsap.timeline()
 
-tl.from('.header-1', {
-    yPercent:-100,
-    ease:"power3.out",
-    duration: 0.3,
-}, 1)
-.to('.header-1', {
-    yPercent:100,
-    ease:"power3.out",
-    duration: 0.5
-}, 4)
-.from('.header-2', {
-    yPercent: -100,
-    ease:"power3.out",
-    duration: 0.3
-}, 4.5)
-.to('.header-2', {
-    yPercent: 100,
-    ease:"power3.out",
-    duration: 0.5
-}, 6)
-.to('.intro-overlay', {
-    opacity: 0,
-    zIndex: -1,
-    duration: 0.5,
-    onStart: () => {
-        window.scrollTo(0,0);
-        document.querySelector('body').style.overflow = 'auto';
-    },
-})
-.from('.hero-wrapper img', {
-    yPercent: 10,
-    opacity: 0,
-    zIndex: 2
-}, 7)
-.from('.top-header-1', {
-    y: '20%',
-    opacity: 0,
-}, 7.3)
-.from('.top-header-2', {
-    y: '20%',
-    opacity: 0,
-}, 7.6)
-.from('.bottom-header', {
-    yPercent: 10,
-    opacity: 0,
-}, 7.9)
+// tl.from('.header-1', {
+//     yPercent:-100,
+//     ease:"power3.out",
+//     duration: 0.3,
+// }, 1)
+// .to('.header-1', {
+//     yPercent:100,
+//     ease:"power3.out",
+//     duration: 0.5
+// }, 4)
+// .from('.header-2', {
+//     yPercent: -100,
+//     ease:"power3.out",
+//     duration: 0.3
+// }, 4.5)
+// .to('.header-2', {
+//     yPercent: 100,
+//     ease:"power3.out",
+//     duration: 0.5
+// }, 6)
+// .to('.intro-overlay', {
+//     opacity: 0,
+//     zIndex: -1,
+//     duration: 0.5,
+//     onStart: () => {
+//         window.scrollTo(0,0);
+//         document.querySelector('body').style.overflow = 'auto';
+//     },
+// })
+// .from('.hero-wrapper img', {
+//     yPercent: 10,
+//     opacity: 0,
+//     zIndex: 2
+// }, 7)
+// .from('.top-header-1', {
+//     y: '20%',
+//     opacity: 0,
+// }, 7.3)
+// .from('.top-header-2', {
+//     y: '20%',
+//     opacity: 0,
+// }, 7.6)
+// .from('.bottom-header', {
+//     yPercent: 10,
+//     opacity: 0,
+// }, 7.9)
 
 ScrollTrigger.defaults({
     // markers: true
@@ -93,17 +93,23 @@ gsap.to('.hero-wrapper img', {
 
 
 // animations for about section
-gsap.to('.hr-wrapper', {
-    scrollTrigger: {
-        trigger: '.hr-wrapper',
-        start: 'top 90%',
-        markers: true
-    },
-    width: '100%',
-    transformOrigin: 'left center',
-    ease: Power1.easeOut,
-    duration: 2,
+
+let hrWrappers = document.querySelectorAll('.hr-wrapper')
+hrWrappers.forEach((hrWrapper, index) => {
+    gsap.to(hrWrapper, {
+        scrollTrigger: {
+            trigger: hrWrapper,
+            start: 'top 90%',
+            // markers: true
+        },
+        width: '100%',
+        transformOrigin: 'left center',
+        ease: Power1.easeOut,
+        duration: 2,
+    })
 })
+
+
 
 gsap.to('.left-col .image-wrapper img', {
     scrollTrigger: {
@@ -155,7 +161,7 @@ gsap.from('.infinity', {
     scrollTrigger: {
         trigger: '.infinity',
         start: "top 80%",
-        markers: true
+        // markers: true
     },
     opacity: 0
 })
@@ -177,6 +183,71 @@ gsap.to('.infinity .line-2', {
     },
     x: '40%'
 })
+
+
+let expertiseItems = document.querySelectorAll('.expertise-item')
+
+expertiseItems.forEach((expertiseItem, i) => {
+    console.log(expertiseItem);
+    let detailContainer = expertiseItem.querySelector('.detail-container')
+    let subLabel = expertiseItem.querySelector('.item-sub-label')
+    let itemButton = expertiseItem.querySelector('.item-button')
+
+    let itemDetails = expertiseItem.querySelectorAll('.item-detail')
+
+    let itemTimeline = gsap.timeline({
+        paused: true
+    })
+
+    itemTimeline.from(detailContainer, { 
+        height: 0
+    }, 0)
+
+    itemTimeline.fromTo(subLabel, {
+        opacity: 0,
+        y: '20%',
+    }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.4
+    }, 0)
+    .to(itemButton, {
+        rotation: '90deg',
+        duration: 0.4,
+    }, 0)
+
+
+
+
+    itemDetails.forEach( (itemDetail, index) => {
+        itemTimeline.from(itemDetail, { 
+            
+            y: '20%',
+            duration: 0.4,
+        }, 0.1*(index+1))
+
+        itemTimeline.from(itemDetail, {
+            opacity: 0,
+        }, 0.1*(index+2))
+    })
+
+    // start code of toggling animation
+    itemTimeline.reverse()
+    itemTimeline.reversed(true)
+
+    expertiseItem.addEventListener('click', () => {
+        itemTimeline.reversed(!itemTimeline.reversed());
+    })
+    // end code of toggling animation
+
+})
+
+
+
+
+
+
+
 
 
 

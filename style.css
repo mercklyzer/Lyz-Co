@@ -8,6 +8,7 @@ body{
     width: 100%;
     background-color: #f7f3f0;
     overflow:hidden;
+    padding: 0 4vw;
 }
 
 section.intro-overlay{
@@ -51,7 +52,7 @@ section.intro-overlay h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 4vw;
+    padding: 30px 0vw;
 }
 
 .nav{
@@ -144,7 +145,6 @@ section.intro-overlay h1{
     width: 0%;
     display: flex;
     align-items: center;
-    padding: 0px 80px;
 }
 
 .hr{
@@ -154,7 +154,7 @@ section.intro-overlay h1{
 }
 
 .about{
-    padding: 8vw 4vw 8vw 4vw;
+    padding: 8vw 0 4vw 0;
     display: flex;
     height: 100% !important;
 }
@@ -177,8 +177,8 @@ section.intro-overlay h1{
     color: #1f1f1f;
 }
 
-.about-desktop .counter{
-    margin-right: 8vw;
+.counter{
+    margin-right: 4vw;
 }
 
 .about-desktop .left-col .image-wrapper{
@@ -221,7 +221,7 @@ section.intro-overlay h1{
 }
 
 .infinity{
-    margin: 4vw 0vw 6vw 0vw;
+    margin: 2vw 0vw 8vw 0vw;
     height: 100%;
     width: 100%;
     display: flex;
@@ -248,11 +248,110 @@ section.intro-overlay h1{
     margin-left: -20%;
 }
 
+.expertise{
+    padding: 0vw 0vw 8vw 0vw;
+    /* border: 2px solid red; */
+}
+
+.expertise-header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.expertise-header-label{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1vw;
+    color: #1f1f1f;
+}
+
+.expertise-header-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'EB Garamond', serif;
+    font-size: 10vw;
+}
+
+.expertise-items{
+    cursor: pointer;
+    /* border: 2px solid red; */
+}
+
+.expertise-item{
+    display: flex;
+    padding: 4vw 0;
+}
+
+.item-counter, .item-label-container{
+    flex-basis: 50%;
+    display: flex;
+}
+
+.item-counter{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 6vw;
+    font-weight: 400;
+    color: #ea4f1b;
+    justify-content: flex-start;
+    align-items: center;
+    letter-spacing: -0.5vw;
+    /* border: 2px solid red; */
+}
+
+.item-label-container{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: #1f1f1f;
+
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+.detail-container{
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+.item-sub-label{
+    color: #ea4f1b;
+    font-size: 1vw;
+    font-weight: 400;
+    /* height: 0;
+    opacity: 0; */
+}
+
+.item-detail{
+    /* border: 2px solid red; */
+    margin-top: 1vw;
+    opacity: 1;
+    font-size: 1.1vw;
+    font-weight: 400;
+}
+
+.item-button{
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.item-button ion-icon{
+    width: 5vw;
+    height: 5vw;
+}
+
+
+
+
 @media screen and (max-width: 768px){
     .navbar{
         height: 60px;
         width: 100%;
-        padding: 30px 40px;
+        padding: 30px 0;
     }
 
     .hero-wrapper img{
@@ -261,10 +360,6 @@ section.intro-overlay h1{
 
     .bottom-header{
         bottom: -4vw;
-    }
-
-    .hr-wrapper{
-        padding: 0px 40px;
     }
 }
 
@@ -280,7 +375,6 @@ section.intro-overlay h1{
     .navbar{
         height: 60px;
         width: 100%;
-        padding: 30px 20px;
     }
 
     .nav.left{
@@ -305,6 +399,6 @@ section.intro-overlay h1{
     }
 
     .hr-wrapper{
-        padding: 0px 20px;
+        height: 2px;
     }
 }
