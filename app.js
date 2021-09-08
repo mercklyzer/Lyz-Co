@@ -185,6 +185,20 @@ gsap.to('.infinity .line-2', {
 })
 
 
+let expertiseAnim = gsap.from('.expertise', {
+    scrollTrigger: {
+        trigger: '.expertise',
+        start: 'top +=80%',
+        markers:true
+    },
+    y: '20%',
+    opacity: 0
+})
+
+
+
+
+
 let expertiseItems = document.querySelectorAll('.expertise-item')
 
 expertiseItems.forEach((expertiseItem, i) => {
@@ -199,10 +213,6 @@ expertiseItems.forEach((expertiseItem, i) => {
         paused: true
     })
 
-    itemTimeline.from(detailContainer, { 
-        height: 0
-    }, 0)
-
     itemTimeline.fromTo(subLabel, {
         opacity: 0,
         y: '20%',
@@ -215,9 +225,6 @@ expertiseItems.forEach((expertiseItem, i) => {
         rotation: '90deg',
         duration: 0.4,
     }, 0)
-
-
-
 
     itemDetails.forEach( (itemDetail, index) => {
         itemTimeline.from(itemDetail, { 
@@ -241,14 +248,4 @@ expertiseItems.forEach((expertiseItem, i) => {
     // end code of toggling animation
 
 })
-
-
-
-
-
-
-
-
-
-
 
