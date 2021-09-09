@@ -1,0 +1,669 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background-color: #f7f3f0;
+    overflow:hidden;
+    padding: 0 4vw;
+}
+
+section.intro-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-wrapper{
+    height: 5vw;
+    width: 100%;
+    position: relative;
+    overflow:hidden;
+}
+
+section.intro-overlay h1{
+    color: white;
+    font-family: 'EB Garamond', serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 3.5vw;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    text-align: center;
+    /* border: 2px solid red; */
+}
+
+.navbar{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0vw;
+}
+
+.nav{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    text-transform: uppercase;
+    /* border: 2px solid red; */
+    flex-grow: 1;
+    width: 0; /* to divide the flexbox equally */
+    display: flex;
+    align-items: center;
+}
+
+.nav.left{
+    justify-content: flex-start;
+}
+
+.nav.middle{
+    font-weight: 400;
+    font-size: 24px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.nav.right{
+    justify-content: flex-end;
+}
+
+.nav.right ion-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.nav span{
+    color: #eb5b2b;
+}
+
+.hero{
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(20vw + 60px) 0px 10vw 0px;
+}
+
+.hero-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.top-header, .bottom-header{
+    font-family: 'EB Garamond', serif;
+    font-size: 10vw;
+    text-align: center;
+    text-transform: uppercase;
+    line-height:90%;
+    position: absolute;
+}
+
+.top-header{
+    top: -15vw;
+}
+
+.bottom-header{
+    bottom: -6vw;
+}
+
+.hero-wrapper .image-container{
+    height: auto;
+    overflow: hidden;
+}
+
+.hero-wrapper .image-container img{
+    height: auto;
+    width: 40vw;
+    overflow:hidden;
+    object-fit:cover;
+    /* border: 2px solid red; */
+}
+
+
+.hr-wrapper{
+    height: 4px;
+    width: 0%;
+    display: flex;
+    align-items: center;
+}
+
+.hr{
+    background-color: #d8d8d8;
+    width: 100%;
+    height: 100%;
+}
+
+.about{
+    padding: 8vw 0 4vw 0;
+    display: flex;
+    height: 100% !important;
+}
+
+.about-desktop{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.about-desktop .left-col{
+    padding: 0px 0px 0px 8vw;
+}
+
+.label-wrapper{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1vw;
+    color: #1f1f1f;
+}
+
+.about-desktop .label-wrapper{
+    margin-bottom: 12vw;
+}
+
+.counter{
+    margin-right: 4vw;
+}
+
+.about-desktop .left-col .image-wrapper{
+    width:27vw;
+    overflow: hidden;
+}
+
+.about-desktop .left-col .image-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    padding-top: 90%;
+}
+
+.about-desktop .right-col h1{
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 6vw;
+    line-height: 95%;
+}
+
+.about-desktop .right-col h2{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    margin: 6vw 0px 4vw 0vw;
+    font-weight: 400;
+    font-size: 1.5vw;
+    color: #1f1f1f;
+    line-height: 1.7;
+}
+
+.about-desktop .right-col .image-wrapper{
+    width:23vw;
+    overflow: hidden;
+}
+
+.about-desktop .right-col .image-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.infinity{
+    margin: 2vw 0vw 8vw 0vw;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'EB Garamond', serif;
+    font-size: 5vw;
+    overflow: hidden;
+}
+
+.infinity .line-1,
+.infinity .line-2{
+    width: 100%;
+    /* border: 2px solid red; */
+    white-space: nowrap;
+}
+
+.infinity .line-1{
+    margin-right: -20%;
+}
+
+.infinity .line-2{
+    margin-left: -20%;
+}
+
+.expertise{
+    padding: 0vw 0vw 8vw 0vw;
+}
+
+.expertise-header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.expertise-header-label{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1vw;
+    color: #1f1f1f;
+}
+
+.expertise-header-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'EB Garamond', serif;
+    font-size: 10vw;
+}
+
+.expertise-items{
+    cursor: pointer;
+}
+
+.expertise-item{
+    display: flex;
+    padding: 4vw 0;
+    transition: 0.4s;
+}
+
+.item-counter, .item-label-container{
+    flex-basis: 50%;
+    display: flex;
+}
+
+.item-counter{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 6vw;
+    font-weight: 400;
+    color: #ea4f1b;
+    justify-content: flex-start;
+    align-items: center;
+    letter-spacing: -0.5vw;
+}
+
+.item-label-container{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: #1f1f1f;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-sub-label{
+    color: #ea4f1b;
+    font-size: 1vw;
+    font-weight: 400;
+}
+
+.item-detail{
+    margin-top: 1vw;
+    opacity: 1;
+    font-size: 1.1vw;
+    font-weight: 400;
+}
+
+
+.item-button{
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.item-button ion-icon{
+    width: 5vw;
+    height: 5vw;
+}
+
+.partners{
+    padding: 6vw 0vw;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.partners-header{
+    display: flex;
+    margin-bottom: 4vw;
+}
+
+.partners .wrapper{
+    display: flex;
+    color: #f7f3f0;
+}
+
+.partners .partners-header .label-wrapper{
+    color: #f7f3f0;
+    flex-basis: 35%;
+}
+
+.partners .partners-header .logo{
+    flex-basis: 35%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 4vw;
+}
+
+.partners .partners-header .logo img{
+    width: 3vw;
+}
+
+.partners .wrapper .left-col,
+.partners .wrapper .middle-col{
+    flex-basis: 35%;
+}
+
+.partners .wrapper .middle-col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 4vw;
+    /* border: 2px solid white; */
+}
+
+.partners .wrapper .left-col img,
+.partners .wrapper .middle-col img{
+    width: 25vw;
+    object-fit: cover;
+    /* border: 2px solid red; */
+}
+
+.partners .wrapper .right-col{
+    flex-basis:30%;
+    font-size: 1vw;
+}
+
+.partners .wrapper .right-col h1{
+    padding-top: 50%;
+    /* border: 2px solid red; */
+    font-weight: 400;
+}
+
+.title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    /* border: 2px solid red; */
+}
+
+.title-wrapper .name{
+    font-size: 1.5vw;
+}
+
+.title-wrapper .title{
+    color: #ea4f1b;
+    font-size: 1vw;
+}
+
+
+@media screen and (max-width: 1024px){
+    .partners .wrapper .right-col h1{
+        padding-top: 20%;
+        /* border: 2px solid red; */
+        font-weight: 400;
+        font-size: 2vw;
+    }
+
+    .partners .wrapper .left-col img,
+    .partners .wrapper .middle-col img{
+        width: 28vw;
+        object-fit: cover;
+        /* border: 2px solid red; */
+    }
+
+    .title-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 28vw;
+        /* border: 2px solid red; */
+        /* border: 2px solid red; */
+    }
+
+}
+
+
+@media screen and (max-width: 768px){
+    .navbar{
+        height: 60px;
+        width: 100%;
+        padding: 30px 0;
+    }
+
+    .hero{
+        padding: 0;
+    }
+
+    .hero-wrapper img{
+        min-width: 70vw;
+    }
+
+    .bottom-header{
+        bottom: -4vw;
+    }
+
+    .label-wrapper, .expertise-header-label{
+        font-size: 3vw !important;
+    }
+
+    .infinity{
+        margin: 2vw 0vw 20vw 0vw;
+        font-size: 10vw;
+        line-height: 1;
+    }
+    
+    .about{
+        padding: 20vw 0 8vw 0;
+    }
+
+    .about-desktop .left-col{
+        flex-basis: 40%;
+    }
+
+    .about-desktop .right-col{
+        flex-basis: 50%;
+    }
+    
+    .about-desktop .right-col .image-wrapper{
+        width:35vw;
+    }
+
+    .about-desktop .right-col h1{
+        font-size: 6vw;
+    }
+    
+    .about-desktop .right-col h2{
+        margin: 6vw 0px 6vw 0vw;
+        font-size: 3vw;
+    }
+
+    .expertise-header{
+        margin-bottom: 8vw;
+    }
+
+    .item-counter{
+        flex-basis: 35%;
+    }
+    .item-label-container{
+        flex-basis: 65%;
+    }
+    
+    .item-counter{
+        font-size: 7vw;
+        letter-spacing: -0.2vw;
+    }
+    
+    .item-label-container{
+        font-size: 4vw;
+        font-weight: 400;
+    }
+    
+    .item-sub-label{
+        font-size: 3vw;
+        font-weight: 500;
+    }
+    
+    .item-detail{
+        margin-top: 3vw;
+        font-size: 2.5vw;
+        font-weight: 500;
+    }
+        
+    .item-button ion-icon{
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .partners-header{
+        width: 100%;
+    }
+
+    .partners .partners-header .label-wrapper,
+    .partners .partners-header .logo{
+        flex-basis: 50%;
+    }
+
+    .partners .partners-header .logo img{
+        width: 4vw;
+    }
+
+    .partners .wrapper{
+        flex-direction: column;
+    }
+
+    .partners .wrapper .left-col,
+    .partners .wrapper .middle-col{
+        flex-basis: 100%;
+        /* border: 2px solid red; */
+        margin-bottom: 8vw;
+    }
+
+    .partners .wrapper .right-col{
+        /* border: 2px solid red; */
+        width: 70%;
+        margin: 16vw 0vw;
+        /* border: 2px solid red; */
+    }
+
+    .partners .wrapper .right-col h1{
+        padding-top: 0;
+        font-size: 3.5vw; 
+    }
+
+    .partners .wrapper .middle-col{
+        padding-right: 0vw;
+        /* border: 2px solid white; */
+    }
+
+    .partners .wrapper .left-col img,
+    .partners .wrapper .middle-col img{
+        width: 100%;
+        margin-bottom: 2vw;
+        /* border: 2px solid red; */
+    }
+
+    .title-wrapper{
+        width: 100%;
+        margin-bottom: 2vw;
+        /* border: 2px solid red; */
+    }
+
+    .title-wrapper .name{
+        font-size: 4vw;
+    }
+
+    .title-wrapper .title{
+        font-size: 3vw;
+    }
+
+
+}
+
+@media screen and (max-width: 480px){
+    .header-wrapper{
+        height: 7vw;
+    }
+
+    section.intro-overlay h1{
+        font-size: 5vw;
+    }
+
+    .navbar{
+        height: 60px;
+        width: 100%;
+    }
+
+    .nav.left{
+        font-size: 3vw;
+    }
+
+    .nav.middle{
+        font-size: 4vw;
+    }
+
+    .nav.right ion-icon{
+        width: 20px;
+        height: 20px;
+    }
+
+    .hero-wrapper img{
+        min-width: 75vw;
+    }
+
+    .bottom-header{
+        bottom: -4vw;
+    }
+
+    .hr-wrapper{
+        height: 2px;
+    }
+
+    .about-desktop .label-wrapper{
+        margin-bottom: 35vw;
+        font-size: 1vw;
+    }
+
+    .about-desktop .right-col{
+        flex-basis: 55%;
+    }
+
+    .about-desktop .right-col h1{
+        font-size: 8vw;
+    }
+
+    .about-desktop .right-col h2{
+        margin: 6vw 0px 8vw 0vw;
+        font-size: 4vw;
+    }
+
+    .about-desktop .right-col .image-wrapper{
+        width:40vw;
+    }
+
+    .item-counter{
+        flex-basis: 20%;
+    }
+
+    .item-label-container{
+        flex-basis: 80%;
+    }
+}
