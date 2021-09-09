@@ -240,8 +240,6 @@ expertiseItems.forEach((expertiseItem, i) => {
 
     })
 
-
-
     // start code of toggling animation
     itemTimeline.reverse()
     itemTimeline.reversed(true)
@@ -253,3 +251,43 @@ expertiseItems.forEach((expertiseItem, i) => {
 
 })
 
+const darken = () => {
+    let partnersTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.partners',
+            start: 'top +=80%',
+            toggleActions: 'play none none reverse'
+        }
+    })
+
+    partnersTimeline.to('body, .hr', {
+        backgroundColor: '#171614',
+        color: '#171614',
+        duration: 0.4
+    })
+    .to('.item-counter, .item-label, .item-sub-label, .item-detail, .item-button ion-icon', {
+        color: '#171614',
+        duration: 0.4
+    }, 0)
+    
+    gsap.from('.wrapper img', {
+        scrollTrigger: {
+            trigger: '.wrapper img',
+            start: '30% bottom',
+            toggleActions: 'play none none reverse'
+        },
+        y: '20%'
+    })
+
+    gsap.from('.wrapper .right-col h1', {
+        scrollTrigger: {
+            trigger: '.wrapper .right-col',
+            start: 'top bottom',
+            scrub: 1,
+        },
+        y: '30%'
+    })
+
+}
+
+darken()
