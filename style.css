@@ -9,6 +9,7 @@ body{
     background-color: #f7f3f0;
     overflow:hidden;
     padding: 0 4vw;
+    background-color: #171614;
 }
 
 section.intro-overlay{
@@ -160,7 +161,6 @@ section.intro-overlay h1{
 .about-desktop{
     display: flex;
     justify-content: space-between;
-    /* border: 2px solid red; */
     width: 100%;
 }
 
@@ -168,11 +168,14 @@ section.intro-overlay h1{
     padding: 0px 0px 0px 8vw;
 }
 
-.about-desktop .label-wrapper{
-    margin-bottom: 12vw;
+.label-wrapper{
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-size: 1vw;
     color: #1f1f1f;
+}
+
+.about-desktop .label-wrapper{
+    margin-bottom: 12vw;
 }
 
 .counter{
@@ -332,7 +335,111 @@ section.intro-overlay h1{
     height: 5vw;
 }
 
+.partners{
+    padding: 6vw 0vw;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
 
+.partners-header{
+    display: flex;
+    margin-bottom: 4vw;
+}
+
+.partners .wrapper{
+    display: flex;
+    color: #f7f3f0;
+}
+
+.partners .partners-header .label-wrapper{
+    color: #f7f3f0;
+    flex-basis: 35%;
+}
+
+.partners .partners-header .logo{
+    flex-basis: 35%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 4vw;
+}
+
+.partners .partners-header .logo img{
+    width: 3vw;
+}
+
+.partners .wrapper .left-col,
+.partners .wrapper .middle-col{
+    flex-basis: 35%;
+}
+
+.partners .wrapper .middle-col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 4vw;
+    /* border: 2px solid white; */
+}
+
+.partners .wrapper .left-col img,
+.partners .wrapper .middle-col img{
+    width: 25vw;
+    object-fit: cover;
+    /* border: 2px solid red; */
+}
+
+.partners .wrapper .right-col{
+    flex-basis:30%;
+}
+
+.partners .wrapper .right-col h1{
+    padding-top: 50%;
+    /* border: 2px solid red; */
+    font-weight: 400;
+}
+
+.title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    /* border: 2px solid red; */
+}
+
+.title-wrapper .name{
+    font-size: 1.5vw;
+}
+
+.title-wrapper .title{
+    color: #ea4f1b;
+    font-size: 1vw;
+}
+
+
+@media screen and (max-width: 1024px){
+    .partners .wrapper .right-col h1{
+        padding-top: 20%;
+        /* border: 2px solid red; */
+        font-weight: 400;
+        font-size: 2vw;
+    }
+
+    .partners .wrapper .left-col img,
+    .partners .wrapper .middle-col img{
+        width: 28vw;
+        object-fit: cover;
+        /* border: 2px solid red; */
+    }
+
+    .title-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 28vw;
+        /* border: 2px solid red; */
+        /* border: 2px solid red; */
+    }
+
+}
 
 
 @media screen and (max-width: 768px){
@@ -358,6 +465,12 @@ section.intro-overlay h1{
         font-size: 3vw !important;
     }
 
+    .infinity{
+        margin: 2vw 0vw 20vw 0vw;
+        font-size: 10vw;
+        line-height: 1;
+    }
+    
     .about{
         padding: 20vw 0 8vw 0;
     }
@@ -420,6 +533,68 @@ section.intro-overlay h1{
         height: 6vw;
     }
 
+    .partners-header{
+        width: 100%;
+    }
+
+    .partners .partners-header .label-wrapper,
+    .partners .partners-header .logo{
+        flex-basis: 50%;
+    }
+
+    .partners .partners-header .logo img{
+        width: 4vw;
+    }
+
+    .partners .wrapper{
+        flex-direction: column;
+    }
+
+    .partners .wrapper .left-col,
+    .partners .wrapper .middle-col{
+        flex-basis: 100%;
+        /* border: 2px solid red; */
+        margin-bottom: 8vw;
+    }
+
+    .partners .wrapper .right-col{
+        /* border: 2px solid red; */
+        width: 70%;
+        margin: 16vw 0vw;
+        /* border: 2px solid red; */
+    }
+
+    .partners .wrapper .right-col h1{
+        padding-top: 0;
+        font-size: 3.5vw; 
+    }
+
+    .partners .wrapper .middle-col{
+        padding-right: 0vw;
+        /* border: 2px solid white; */
+    }
+
+    .partners .wrapper .left-col img,
+    .partners .wrapper .middle-col img{
+        width: 100%;
+        margin-bottom: 2vw;
+        /* border: 2px solid red; */
+    }
+
+    .title-wrapper{
+        width: 100%;
+        margin-bottom: 2vw;
+        /* border: 2px solid red; */
+    }
+
+    .title-wrapper .name{
+        font-size: 4vw;
+    }
+
+    .title-wrapper .title{
+        font-size: 3vw;
+    }
+
 
 }
 
@@ -464,9 +639,7 @@ section.intro-overlay h1{
 
     .about-desktop .label-wrapper{
         margin-bottom: 35vw;
-        font-family: 'IBM Plex Sans Arabic', sans-serif;
         font-size: 1vw;
-        color: #1f1f1f;
     }
 
     .about-desktop .right-col{
