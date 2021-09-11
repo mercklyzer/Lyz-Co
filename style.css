@@ -679,6 +679,11 @@ section.intro-overlay h1{
         flex-basis: 50%;
     }
 
+    .contact-body .right-col-container .middle-col,
+    .contact-body .right-col-container .right-col{
+        font-size: 3vw;
+    }
+
     .circle{
         height: 20vw;
         width: 20vw;
