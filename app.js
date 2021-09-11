@@ -270,6 +270,9 @@ const darken = () => {
         color: '#171614',
         duration: 0.4
     })
+    partnersTimeline.to('html', {
+        "--scrollBorder": '#171614',
+    },0)
     .to('.item-counter, .item-label, .item-sub-label, .item-detail, .item-button ion-icon', {
         color: '#171614',
         duration: 0.4
@@ -297,27 +300,50 @@ const darken = () => {
 
 darken()
 
-let circleContainer = document.querySelector('.contact-body .left-col')
+let activate = () => {
+    let circleContainer = document.querySelector('.contact-body .left-col')
+    let circle = circleContainer.querySelector('.circle')
 
-gsap.set('.circle', {
-    xPercent: 50,
-    yPercent: 50
-})
-
-circleContainer.addEventListener('mousemove', (e) => {
-    gsap.to('.circle', 0.3, {
-        left: e.offsetX,
-        top: e.offsetY,
+    TweenMax.set(circle, {
+        scale: 0,
+        xPercent: -50,
+        yPercent: -50
     })
-})
 
-circleContainer.addEventListener('mouseout', () => {
-    gsap.to('.circle', {
-        top: '50%',
-        left: '50%',
-        duration: 0.4,
-    })
-})
+    circleContainer.addEventListener("pointerenter", function(e) {
+        TweenMax.to(circle, 0.3, { scale: 1, opacity: 1 });
+        positionCircle(e);
+    });
+
+    circleContainer.addEventListener("pointermove", function(e) {
+        positionCircle(e);
+    });
+
+    // study the math behind
+    function positionCircle(e) {
+        
+        
+        var relX = e.pageX - circleContainer.offsetLeft;
+        var relY = e.pageY - circleContainer.offsetTop;
+        
+        // check if mouse leaves the container
+        if( relX > circleContainer.offsetWidth ||
+            relX < 0 ||
+            relY > circleContainer.offsetHeight ||
+            relY < 0
+        ){
+            TweenMax.to(circle, 0.3, { scale: 0, opacity: 0 });
+        }
+    
+        TweenMax.to(circle, 0.3, { x: relX, y: relY });
+    }
+}
+
+
+
+
+
+
 
 let showContact = () => {
     gsap.from('.contact-header', {
@@ -343,3 +369,5 @@ let showContact = () => {
 }
 
 showContact()
+activate()
+

@@ -1,3 +1,7 @@
+html{
+    --scrollBorder: #f7f3f0;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -9,6 +13,22 @@ body{
     background-color: #f7f3f0;
     overflow:hidden;
     padding: 0 4vw;
+}
+
+body::-webkit-scrollbar {
+    width: 1.1em;
+}
+
+
+body::-webkit-scrollbar-thumb {
+    background-color: #606060;
+    border-radius: 20px;
+    border: 5px solid var(--scrollBorder);
+    /* border: 5px solid #606060; */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #909090;
 }
 
 section.intro-overlay{
@@ -140,6 +160,7 @@ section.intro-overlay h1{
     width: 0%;
     display: flex;
     align-items: center;
+    
 }
 
 .hr{
@@ -450,21 +471,22 @@ section.intro-overlay h1{
 
 .contact-body .left-col{
     position: relative;
-    padding: 0;
 }
 
 .circle{
+    position: absolute;
     height: 15vw;
     width: 15vw;
+    top: 0;
+    left: 0;
+    background: #f7f3f0;
     border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
     display: flex;
-    background-color: #f7f3f0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -50% 0 0 -50%;
-    pointer-events:none;
-    z-index: -1;
+    justify-content: center;
+    align-items:center;
+    z-index: 1;
 }
 
 .hello{
@@ -472,8 +494,11 @@ section.intro-overlay h1{
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     text-transform: uppercase;
     font-size: 1vw;
-    margin: auto;
-    cursor: pointer;
+}
+
+.hover-me{
+    z-index: -2;
+    font-size: 2vw;
 }
 
 .contact-body .middle-col,
@@ -827,4 +852,5 @@ section.intro-overlay h1{
         height: 25vw;
         width: 25vw;
     } 
+
 }
