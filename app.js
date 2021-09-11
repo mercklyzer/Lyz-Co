@@ -1,3 +1,4 @@
+//copy
 console.clear()
 
 const overlay = () => {
@@ -51,7 +52,7 @@ const overlay = () => {
     }, 7.9)
 }
 
-overlay()
+// overlay()
 
 
 
@@ -116,8 +117,6 @@ hrWrappers.forEach((hrWrapper, index) => {
     })
 })
 
-
-
 gsap.to('.left-col .image-wrapper img', {
     scrollTrigger: {
         trigger: '.left-col .image-wrapper img',
@@ -137,7 +136,7 @@ gsap.to('.left-col .image-wrapper img', {
     scale: 1.2,
 })
 
-gsap.to('.right-col', {
+gsap.to('.about .right-col', {
     scrollTrigger: {
         trigger: '.right-col',
         start: 'center bottom',
@@ -266,7 +265,7 @@ const darken = () => {
         }
     })
 
-    partnersTimeline.to('body, .hr', {
+    partnersTimeline.to('body, .hr:not(.contact .hr)', {
         backgroundColor: '#171614',
         color: '#171614',
         duration: 0.4
@@ -297,3 +296,51 @@ const darken = () => {
 }
 
 darken()
+
+let circleContainer = document.querySelector('.contact-body .left-col')
+
+gsap.set('.circle', {
+    xPercent: 50,
+    yPercent: 50
+})
+
+circleContainer.addEventListener('mousemove', (e) => {
+    gsap.to('.circle', 0.3, {
+        left: e.offsetX,
+        top: e.offsetY,
+    })
+})
+
+circleContainer.addEventListener('mouseout', () => {
+    gsap.to('.circle', {
+        top: '50%',
+        left: '50%',
+        duration: 0.4,
+    })
+})
+
+let showContact = () => {
+    gsap.from('.contact-header', {
+        scrollTrigger: {
+            trigger: '.contact-header',
+            start: 'top 70%'
+        },
+        y: '20%',
+        opacity: 0,
+        duration: 0.4
+    })
+
+    gsap.from('.contact-body', {
+        scrollTrigger: {
+            trigger: '.contact-body',
+            start: 'top 80%',
+            markers: true
+        },
+        opacity: 0,
+        ease: Power1.easeOut,
+        duration: 1,
+        onComplete: () => ScrollTrigger.refresh()
+    })
+}
+
+showContact()

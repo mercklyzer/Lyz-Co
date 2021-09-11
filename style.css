@@ -42,7 +42,6 @@ section.intro-overlay h1{
     transform: translate(-50%, 0);
     width: 100%;
     text-align: center;
-    /* border: 2px solid red; */
 }
 
 .navbar{
@@ -57,7 +56,6 @@ section.intro-overlay h1{
 .nav{
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     text-transform: uppercase;
-    /* border: 2px solid red; */
     flex-grow: 1;
     width: 0; /* to divide the flexbox equally */
     display: flex;
@@ -134,7 +132,6 @@ section.intro-overlay h1{
     width: 40vw;
     overflow:hidden;
     object-fit:cover;
-    /* border: 2px solid red; */
 }
 
 
@@ -236,7 +233,6 @@ section.intro-overlay h1{
 .infinity .line-1,
 .infinity .line-2{
     width: 100%;
-    /* border: 2px solid red; */
     white-space: nowrap;
 }
 
@@ -266,7 +262,8 @@ section.intro-overlay h1{
     color: #1f1f1f;
 }
 
-.expertise-header-title{
+.expertise-header-title,
+.contact-header-title{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -376,14 +373,12 @@ section.intro-overlay h1{
     align-items: flex-end;
     justify-content: space-between;
     padding-right: 4vw;
-    /* border: 2px solid white; */
 }
 
 .partners .wrapper .left-col img,
 .partners .wrapper .middle-col img{
     width: 25vw;
     object-fit: cover;
-    /* border: 2px solid red; */
 }
 
 .partners .wrapper .right-col{
@@ -393,7 +388,6 @@ section.intro-overlay h1{
 
 .partners .wrapper .right-col h1{
     padding-top: 50%;
-    /* border: 2px solid red; */
     font-weight: 400;
 }
 
@@ -402,7 +396,6 @@ section.intro-overlay h1{
     justify-content: space-between;
     align-items: center;
     width: 25vw;
-    /* border: 2px solid red; */
 }
 
 .title-wrapper .name{
@@ -410,15 +403,96 @@ section.intro-overlay h1{
 }
 
 .title-wrapper .title{
-    color: #ea4f1b;
+    font-size: 1vw;
+    color: #eb5b2b;
+}
+
+.contact{
+    padding: 6vw 0vw 8vw 0vw;
+    color: #d8d8d8 !important;
+}
+
+.contact-header .contact-header-label{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-size: 1vw;
 }
 
+.contact-body{
+    display: flex;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1vw;
+    font-weight: 400;
+    margin: 2vw 0vw;
+}
+
+.contact-body .left-col{
+    flex-basis: 33.33%;
+}
+
+.contact-body .right-col-container{
+    flex-basis: 66.66%;
+    display: flex;
+}
+
+.contact-body .middle-col,
+.contact-body .right-col{
+    flex-basis: 50%;
+}
+
+.contact-body .left-col,
+.contact-body .middle-col,
+.contact-body .right-col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vw 2vw;
+}
+
+.contact-body .left-col{
+    position: relative;
+    padding: 0;
+}
+
+.circle{
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    display: flex;
+    background-color: #f7f3f0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -50% 0 0 -50%;
+    pointer-events:none;
+    z-index: -1;
+}
+
+.hello{
+    color: #5b5b5b;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    text-transform: uppercase;
+    font-size: 1vw;
+    margin: auto;
+    cursor: pointer;
+}
+
+.contact-body .middle-col,
+.contact-body .right-col{
+    flex-direction: column;
+    font-size: 1.5vw;
+    font-weight: 500;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.middle-col .middle,
+.right-col .middle{
+    margin: 2vw 0vw;
+}
 
 @media screen and (max-width: 1024px){
     .partners .wrapper .right-col h1{
         padding-top: 20%;
-        /* border: 2px solid red; */
         font-weight: 400;
         font-size: 2vw;
     }
@@ -427,7 +501,6 @@ section.intro-overlay h1{
     .partners .wrapper .middle-col img{
         width: 28vw;
         object-fit: cover;
-        /* border: 2px solid red; */
     }
 
     .title-wrapper{
@@ -435,12 +508,9 @@ section.intro-overlay h1{
         justify-content: space-between;
         align-items: center;
         width: 28vw;
-        /* border: 2px solid red; */
-        /* border: 2px solid red; */
     }
 
 }
-
 
 @media screen and (max-width: 768px){
     .navbar{
@@ -553,15 +623,12 @@ section.intro-overlay h1{
     .partners .wrapper .left-col,
     .partners .wrapper .middle-col{
         flex-basis: 100%;
-        /* border: 2px solid red; */
         margin-bottom: 8vw;
     }
 
     .partners .wrapper .right-col{
-        /* border: 2px solid red; */
         width: 70%;
         margin: 16vw 0vw;
-        /* border: 2px solid red; */
     }
 
     .partners .wrapper .right-col h1{
@@ -571,20 +638,17 @@ section.intro-overlay h1{
 
     .partners .wrapper .middle-col{
         padding-right: 0vw;
-        /* border: 2px solid white; */
     }
 
     .partners .wrapper .left-col img,
     .partners .wrapper .middle-col img{
         width: 100%;
         margin-bottom: 2vw;
-        /* border: 2px solid red; */
     }
 
     .title-wrapper{
         width: 100%;
         margin-bottom: 2vw;
-        /* border: 2px solid red; */
     }
 
     .title-wrapper .name{
@@ -595,7 +659,29 @@ section.intro-overlay h1{
         font-size: 3vw;
     }
 
+    .contact-body .middle-col,
+    .contact-body .right-col{
+        font-size: 2vw;
+    }
 
+    .hello{
+        font-size: 2vw;
+    }
+
+    .contact-body .left-col{
+        flex-direction: column;
+        flex-basis: 50%;
+    }
+
+    .contact-body .right-col-container{
+        flex-direction: column;
+        flex-basis: 50%;
+    }
+
+    .circle{
+        height: 20vw;
+        width: 20vw;
+    }   
 }
 
 @media screen and (max-width: 480px){
@@ -666,4 +752,28 @@ section.intro-overlay h1{
     .item-label-container{
         flex-basis: 80%;
     }
+
+    .contact-body .middle-col,
+    .contact-body .right-col{
+        font-size: 4vw;
+    }
+
+    .hello{
+        font-size: 3vw;
+    }
+
+    .contact-body .left-col{
+        flex-direction: column;
+        flex-basis: 40%;
+    }
+
+    .contact-body .right-col-container{
+        flex-direction: column;
+        flex-basis: 60%;
+    }
+
+    .circle{
+        height: 25vw;
+        width: 25vw;
+    } 
 }
