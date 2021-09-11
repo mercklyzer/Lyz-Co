@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "copy": "for %f in (index.html, style.css, app.js) do xcopy %f dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
