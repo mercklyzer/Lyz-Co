@@ -531,7 +531,8 @@ section.intro-overlay h1{
         bottom: -4vw;
     }
 
-    .label-wrapper, .expertise-header-label{
+    .label-wrapper, .expertise-header-label,
+    .label-wrapper, .contact-header-label{
         font-size: 3vw !important;
     }
 
@@ -755,7 +756,7 @@ section.intro-overlay h1{
 
     .contact-body .middle-col,
     .contact-body .right-col{
-        font-size: 4vw;
+        font-size: 3vw;
     }
 
     .hello{
@@ -765,6 +766,16 @@ section.intro-overlay h1{
     .contact-body .left-col{
         flex-direction: column;
         flex-basis: 40%;
+    }
+
+    .contact-body .left-col,
+    .contact-body .middle-col,
+    .contact-body .right-col{
+        padding: 0;
+    }
+
+    .contact-body .middle-col{
+        margin-bottom: 8vw;
     }
 
     .contact-body .right-col-container{
