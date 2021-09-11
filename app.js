@@ -334,7 +334,6 @@ let showContact = () => {
         scrollTrigger: {
             trigger: '.contact-body',
             start: 'top 80%',
-            markers: true
         },
         opacity: 0,
         ease: Power1.easeOut,
