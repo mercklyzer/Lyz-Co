@@ -355,6 +355,7 @@ const showContactOverlay = (e) => {
 
     timeline.to('.contact-overlay', {
         'clip-path': `circle(200vw at ${e.clientX}px ${e.clientY}px)`,
+        '-webkit-clip-path': `circle(200vw at ${e.clientX}px ${e.clientY}px)`,
         'z-index': 999,
         opacity: 1,
         duration: 0.3
