@@ -287,41 +287,44 @@ const darken = () => {
     })
 }
 
-let enableCircle = () => {
-    let circleContainer = document.querySelector('.contact-body .left-col')
-    let circle = circleContainer.querySelector('.circle')
+let circleContainer = document.querySelector('.contact-body .left-col')
+let circle = circleContainer.querySelector('.circle')
 
-    TweenMax.set(circle, {
+let positionCircle = (e) => {        
+    var relX = e.pageX - circleContainer.offsetLeft;
+    var relY = e.pageY - circleContainer.offsetTop;
+    
+    // check if mouse leaves the container
+    if( relX > circleContainer.offsetWidth ||
+        relX < 0 ||
+        relY > circleContainer.offsetHeight ||
+        relY < 0
+    ){
+        gsap.to(circle,{ scale: 0, opacity: 0, duration:  0.3});
+    }
+
+    gsap.to(circle, { x: relX, y: relY, duration: 0.3});
+
+    gsap.to('.contact-overlay', {
+        'clip-path': `circle(100px at ${e.clientX}px ${e.clientY}px)`,
+        duration: 0.3
+    })
+}
+
+let enableCircle = () => {
+
+    gsap.set(circle, {
         scale: 0,
         xPercent: -50,
         yPercent: -50
     })
 
     circleContainer.addEventListener("pointerenter", function(e) {
-        TweenMax.to(circle, 0.3, { scale: 1, opacity: 1 });
+        gsap.to(circle, { scale: 1, opacity: 1, duration: 0.3});
         positionCircle(e);
     });
 
-    circleContainer.addEventListener("pointermove", function(e) {
-        positionCircle(e);
-    });
-
-    // study the math behind
-    function positionCircle(e) {        
-        var relX = e.pageX - circleContainer.offsetLeft;
-        var relY = e.pageY - circleContainer.offsetTop;
-        
-        // check if mouse leaves the container
-        if( relX > circleContainer.offsetWidth ||
-            relX < 0 ||
-            relY > circleContainer.offsetHeight ||
-            relY < 0
-        ){
-            TweenMax.to(circle, 0.3, { scale: 0, opacity: 0 });
-        }
-    
-        TweenMax.to(circle, 0.3, { x: relX, y: relY });
-    }
+    circleContainer.addEventListener("pointermove", positionCircle);
 }
 
 const showContact = () => {
@@ -347,11 +350,83 @@ const showContact = () => {
     })
 }
 
+const showContactOverlay = (e) => {
+    let timeline = gsap.timeline()
+
+    timeline.to('.contact-overlay', {
+        'clip-path': `circle(200vw at ${e.clientX}px ${e.clientY}px)`,
+        'z-index': 999,
+        opacity: 1,
+        duration: 0.3
+    })
+
+    timeline.to('.contact-overlay', {
+        backgroundColor: '#171614'
+    })
+
+    gsap.to('body', {
+        overflow: 'hidden'
+    })
+}
+
+const hideContactOverlay = () => {
+    let timeline = gsap.timeline()
+
+    timeline.to('.contact-overlay', {
+        opacity: 0,
+        duration: 0.4,
+        'z-index': -1,
+        
+    })
+    .to('.contact-overlay', {
+        backgroundColor: '#d8d8d8'
+    })
+
+    gsap.to('.hello', {
+        opacity: 1,
+        duration: 0.4
+    })
+
+    gsap.to('body', {
+        overflow: 'auto'
+    })
+
+    circleContainer.addEventListener("pointermove", positionCircle);
+    circleContainer.addEventListener("pointerenter", positionCircle);
+}
+
+const enableContactOverlay = () => {
+    let circle = document.querySelector('.circle')
+
+    circle.addEventListener('click', (e) => {
+
+        circleContainer.removeEventListener("pointermove", positionCircle);
+        circleContainer.removeEventListener("pointerenter", positionCircle);
+
+        showContactOverlay(e)
+
+        gsap.to('.hello', {
+            opacity: 0,
+            duration: 0.4
+        })
+
+        gsap.to('.circle', {
+            opacity: 0,
+            duration: 0.4
+        })
+    })
+
+    let close = document.querySelector('.contact-overlay .close')
+
+    close.addEventListener('click', hideContactOverlay)
+}
+
 // showIntroOverlay()
-showHero()
-showAbout()
-showInfinity()
-showExpertise()
-darken()
-showContact()
-enableCircle()
+showHero();
+showAbout();
+showInfinity();
+showExpertise();
+darken();
+showContact();
+enableCircle();
+enableContactOverlay();
