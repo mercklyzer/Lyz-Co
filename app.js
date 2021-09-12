@@ -1,7 +1,6 @@
-//copy
 console.clear()
 
-const overlay = () => {
+const showIntroOverlay = () => {
     let tl = gsap.timeline()
 
     tl.from('.header-1', {
@@ -52,209 +51,200 @@ const overlay = () => {
     }, 7.9)
 }
 
-// overlay()
-
-
-
-ScrollTrigger.defaults({
-    // markers: true
-})
-
-gsap.to('.top-header-1', {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-    },
-    yPercent: -100
-})
-gsap.to('.top-header-2', {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-    },
-    yPercent: -100
-})
-gsap.to('.bottom-header', {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-    },
-    yPercent: -100
-})
-gsap.to('.hero-wrapper img', {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-    },
-    scale: 1.2,
-    transformOrigin: '50% 50%'
-})
-
-
-// animations for about section
-
-let hrWrappers = document.querySelectorAll('.hr-wrapper')
-hrWrappers.forEach((hrWrapper, index) => {
-
-    console.log(hrWrapper);
-    gsap.to(hrWrapper, {
+const showHero = () => {
+    gsap.to('.top-header-1', {
         scrollTrigger: {
-            trigger: hrWrapper,
-            start: 'center bottom',
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1
         },
-        width: '100%',
-        transformOrigin: 'left center',
-        ease: Power1.easeOut,
-        duration: 2,
+        yPercent: -100
     })
-})
+    gsap.to('.top-header-2', {
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1
+        },
+        yPercent: -100
+    })
+    gsap.to('.bottom-header', {
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1
+        },
+        yPercent: -100
+    })
+    gsap.to('.hero-wrapper img', {
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1
+        },
+        scale: 1.2,
+        transformOrigin: '50% 50%'
+    })
+}
 
-gsap.to('.left-col .image-wrapper img', {
-    scrollTrigger: {
-        trigger: '.left-col .image-wrapper img',
-        start: '+=20% bottom',
-    },
-    paddingTop: '0%',
-    duration: 1,
-    onComplete: () => ScrollTrigger.refresh() // to adjust markers below because of change in padding
-})
+const showAbout = () => {
+    let hrWrappers = document.querySelectorAll('.hr-wrapper')
+    hrWrappers.forEach((hrWrapper, index) => {
 
-gsap.to('.left-col .image-wrapper img', {
-    scrollTrigger: {
-        trigger: '.left-col .image-wrapper img',
-        start: 'center bottom',
-        scrub: 1
-    },
-    scale: 1.2,
-})
-
-gsap.to('.about .right-col', {
-    scrollTrigger: {
-        trigger: '.right-col',
-        start: 'center bottom',
-        scrub: 1
-    },
-    y: '-10%',
-})
-
-gsap.to('.right-col .image-wrapper', {
-    scrollTrigger: {
-        trigger: '.right-col .image-wrapper img',
-        start: 'center bottom',
-        scrub: 1
-    },
-    y: '-10%',
-})
-
-gsap.to('.right-col .image-wrapper img', {
-    scrollTrigger: {
-        trigger: '.right-col .image-wrapper img',
-        start: 'center bottom',
-        scrub: 1
-    },
-    scale: 1.2,
-})
-
-gsap.from('.infinity', {
-    scrollTrigger: {
-        trigger: '.infinity',
-        start: "top 80%",
-        // markers: true
-    },
-    opacity: 0
-})
-
-gsap.to('.infinity .line-1', {
-    scrollTrigger: {
-        trigger: '.infinity',
-        start: "top 80%",
-        scrub: 1,
-    },
-    x: '-80%'
-})
-
-gsap.to('.infinity .line-2', {
-    scrollTrigger: {
-        trigger: '.infinity',
-        start: "top 80%",
-        scrub: 1
-    },
-    x: '80%'
-})
-
-
-let expertiseAnim = gsap.from('.expertise', {
-    scrollTrigger: {
-        trigger: '.expertise',
-        start: 'top 90%',
-        // markers:true
-    },
-    y: '20%',
-    opacity: 0,
-    onComplete: () => ScrollTrigger.refresh()
-})
-
-
-
-
-
-let expertiseItems = document.querySelectorAll('.expertise-item')
-
-expertiseItems.forEach((expertiseItem, i) => {
-    console.log(expertiseItem);
-    let subLabel = expertiseItem.querySelector('.item-sub-label')
-    let itemButton = expertiseItem.querySelector('.item-button')
-
-    let itemDetails = expertiseItem.querySelectorAll('.item-detail')
-
-    let itemTimeline = gsap.timeline({
-        paused: true
+        console.log(hrWrapper);
+        gsap.to(hrWrapper, {
+            scrollTrigger: {
+                trigger: hrWrapper,
+                start: 'center bottom',
+            },
+            width: '100%',
+            transformOrigin: 'left center',
+            ease: Power1.easeOut,
+            duration: 2,
+        })
     })
 
-    itemTimeline.fromTo(subLabel, {
-        opacity: 0,
+    gsap.to('.left-col .image-wrapper img', {
+        scrollTrigger: {
+            trigger: '.left-col .image-wrapper img',
+            start: '+=20% bottom',
+        },
+        paddingTop: '0%',
+        duration: 1,
+        onComplete: () => ScrollTrigger.refresh() // to adjust markers below because of change in padding
+    })
+
+    gsap.to('.left-col .image-wrapper img', {
+        scrollTrigger: {
+            trigger: '.left-col .image-wrapper img',
+            start: 'center bottom',
+            scrub: 1
+        },
+        scale: 1.2,
+    })
+
+    gsap.to('.about .right-col', {
+        scrollTrigger: {
+            trigger: '.right-col',
+            start: 'center bottom',
+            scrub: 1
+        },
+        y: '-10%',
+    })
+
+    gsap.to('.right-col .image-wrapper', {
+        scrollTrigger: {
+            trigger: '.right-col .image-wrapper img',
+            start: 'center bottom',
+            scrub: 1
+        },
+        y: '-10%',
+    })
+
+    gsap.to('.right-col .image-wrapper img', {
+        scrollTrigger: {
+            trigger: '.right-col .image-wrapper img',
+            start: 'center bottom',
+            scrub: 1
+        },
+        scale: 1.2,
+    })
+}
+
+const showInfinity = () => {
+    gsap.from('.infinity', {
+        scrollTrigger: {
+            trigger: '.infinity',
+            start: "top 80%",
+            // markers: true
+        },
+        opacity: 0
+    })
+    
+    gsap.to('.infinity .line-1', {
+        scrollTrigger: {
+            trigger: '.infinity',
+            start: "top 80%",
+            scrub: 1,
+        },
+        x: '-80%'
+    })
+    
+    gsap.to('.infinity .line-2', {
+        scrollTrigger: {
+            trigger: '.infinity',
+            start: "top 80%",
+            scrub: 1
+        },
+        x: '80%'
+    })
+}
+
+const showExpertise = () => { 
+    gsap.from('.expertise', {
+        scrollTrigger: {
+            trigger: '.expertise',
+            start: 'top 90%',
+            // markers:true
+        },
         y: '20%',
-    }, {
-        opacity: 1,
-        y: 0,
-        duration: 0.4
-    }, 0)
-    .to(itemButton, {
-        rotation: '90deg',
-        duration: 0.4,
-    }, 0)
-
-    itemDetails.forEach( (itemDetail, index) => {
-        itemTimeline.from(itemDetail, { 
-            
-            y: '20%',
-            duration: 0.4,
-        }, 0.1*(index+1))
-
-        itemTimeline.from(itemDetail, {
+        opacity: 0,
+        onComplete: () => ScrollTrigger.refresh()
+    })
+    
+    let expertiseItems = document.querySelectorAll('.expertise-item')
+    
+    expertiseItems.forEach((expertiseItem, i) => {
+        console.log(expertiseItem);
+        let subLabel = expertiseItem.querySelector('.item-sub-label')
+        let itemButton = expertiseItem.querySelector('.item-button')
+    
+        let itemDetails = expertiseItem.querySelectorAll('.item-detail')
+    
+        let itemTimeline = gsap.timeline({
+            paused: true
+        })
+    
+        itemTimeline.fromTo(subLabel, {
             opacity: 0,
-        }, 0.1*(index+2))
-
+            y: '20%',
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.4
+        }, 0)
+        .to(itemButton, {
+            rotation: '90deg',
+            duration: 0.4,
+        }, 0)
+    
+        itemDetails.forEach( (itemDetail, index) => {
+            itemTimeline.from(itemDetail, { 
+                
+                y: '20%',
+                duration: 0.4,
+            }, 0.1*(index+1))
+    
+            itemTimeline.from(itemDetail, {
+                opacity: 0,
+            }, 0.1*(index+2))
+    
+        })
+    
+        // start code of toggling animation
+        itemTimeline.reverse()
+        itemTimeline.reversed(true)
+    
+        expertiseItem.addEventListener('click', () => {
+            itemTimeline.reversed(!itemTimeline.reversed());
+        })
+        // end code of toggling animation
     })
-
-    // start code of toggling animation
-    itemTimeline.reverse()
-    itemTimeline.reversed(true)
-
-    expertiseItem.addEventListener('click', () => {
-        itemTimeline.reversed(!itemTimeline.reversed());
-    })
-    // end code of toggling animation
-
-})
+}
 
 const darken = () => {
     let partnersTimeline = gsap.timeline({
@@ -295,12 +285,9 @@ const darken = () => {
         },
         y: '30%'
     })
-
 }
 
-darken()
-
-let activate = () => {
+let enableCircle = () => {
     let circleContainer = document.querySelector('.contact-body .left-col')
     let circle = circleContainer.querySelector('.circle')
 
@@ -320,9 +307,7 @@ let activate = () => {
     });
 
     // study the math behind
-    function positionCircle(e) {
-        
-        
+    function positionCircle(e) {        
         var relX = e.pageX - circleContainer.offsetLeft;
         var relY = e.pageY - circleContainer.offsetTop;
         
@@ -339,13 +324,7 @@ let activate = () => {
     }
 }
 
-
-
-
-
-
-
-let showContact = () => {
+const showContact = () => {
     gsap.from('.contact-header', {
         scrollTrigger: {
             trigger: '.contact-header',
@@ -368,6 +347,11 @@ let showContact = () => {
     })
 }
 
+// showIntroOverlay()
+showHero()
+showAbout()
+showInfinity()
+showExpertise()
+darken()
 showContact()
-activate()
-
+enableCircle()
