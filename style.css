@@ -121,7 +121,6 @@ section.contact-overlay{
     border-bottom: 1px solid #f7f3f0;
     color: #f7f3f0;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
-
 }
 
 .contact-overlay > .container > .right > .top form input::placeholder{
@@ -706,7 +705,21 @@ section.intro-overlay h1{
         align-items: center;
         width: 28vw;
     }
+}
 
+@media screen and (max-width: 1024px) and (min-height: 1000px){
+    .nav.left{
+        font-size: 3vw;
+    }
+
+    .nav.middle{
+        font-size: 4vw;
+    }
+
+    .nav.right ion-icon{
+        width: 5vw;
+        height: 5vw;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -1057,4 +1070,49 @@ section.intro-overlay h1{
         width: 25vw;
     } 
 
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape){
+    .nav.left{
+        font-size: 2vw;
+    }
+
+    .nav.middle{
+        font-size: 2.5vw;
+    }
+
+    .contact-overlay .container{
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-height: 400px) and (max-width: 1024px) and (orientation: landscape){
+    .contact-overlay > .container > .right > .top form input{
+        padding: 0.2vw 0;
+        font-size: 1.1vw;
+        border-bottom: 1px solid #f7f3f0;
+    }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape),
+screen and (max-height: 400px){
+
+    .hero{
+        padding: calc(20vw + 60px) 0px 10vw 0px;
+    }
+    
+    .contact-overlay .container .left{
+        font-size: 10vw;
+    }
+
+    .contact-overlay .container .left svg{
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .contact-overlay > .container > .right > .top form input{
+        padding: 0.5vw 0;
+        font-size: 1.5vw;
+        border-bottom: 1px solid #f7f3f0;
+    }
 }
