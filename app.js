@@ -366,7 +366,6 @@ const showContactOverlay = (e) => {
                 '-webkit-clip-path': `none`,
             })
 
-            document.querySelector('.contact-overlay').style.border= '2px solid red';
         }
     })
 
