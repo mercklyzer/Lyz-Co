@@ -95,7 +95,6 @@ const showAbout = () => {
     let hrWrappers = document.querySelectorAll('.hr-wrapper')
     hrWrappers.forEach((hrWrapper, index) => {
 
-        console.log(hrWrapper);
         gsap.to(hrWrapper, {
             scrollTrigger: {
                 trigger: hrWrapper,
@@ -199,7 +198,6 @@ const showExpertise = () => {
     let expertiseItems = document.querySelectorAll('.expertise-item')
     
     expertiseItems.forEach((expertiseItem, i) => {
-        console.log(expertiseItem);
         let subLabel = expertiseItem.querySelector('.item-sub-label')
         let itemButton = expertiseItem.querySelector('.item-button')
     
@@ -353,13 +351,25 @@ const showContact = () => {
 const showContactOverlay = (e) => {
     let timeline = gsap.timeline()
 
+    let size = screen.height >= screen.width? '150vh' : '150vw'
+
     timeline.to('.contact-overlay', {
-        'clip-path': `circle(200vw at ${e.clientX}px ${e.clientY}px)`,
-        '-webkit-clip-path': `circle(200vw at ${e.clientX}px ${e.clientY}px)`,
+        'clip-path': `circle(${size} at ${e.clientX}px ${e.clientY}px)`,
+        '-webkit-clip-path': `circle(${size} at ${e.clientX}px ${e.clientY}px)`,
         'z-index': 999,
         opacity: 1,
-        duration: 0.3
+        duration: 0.3,
+        onComplete: () => {
+
+            gsap.to('.contact-overlay', {
+                'clip-path': `none`,
+                '-webkit-clip-path': `none`,
+            })
+
+            document.querySelector('.contact-overlay').style.border= '2px solid red';
+        }
     })
+
 
     timeline.to('.contact-overlay', {
         backgroundColor: '#171614'
