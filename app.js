@@ -360,23 +360,38 @@ const showContactOverlay = (e) => {
         opacity: 1,
         duration: 0.3,
         onComplete: () => {
-
             gsap.to('.contact-overlay', {
                 'clip-path': `none`,
                 '-webkit-clip-path': `none`,
+                duration: 0
             })
-
         }
     })
-
-
-    timeline.to('.contact-overlay', {
+    .to('.contact-overlay', {
         backgroundColor: '#171614'
     })
+    .from('.contact-overlay .navbar', {
+        x: '-5%',
+        opacity: 0,
+        duration: 0.4
+    })
+    .from('.contact-overlay .container .left', {
+        y: '5%',
+        opacity: 0,
+        duration: 0.4
+    })
+    .from('.contact-overlay .container .right', {
+        y: '5%',
+        opacity: 0,
+        duration: 0.4
+    })
+
+
 
     gsap.to('body', {
         overflow: 'hidden'
     })
+
 }
 
 const hideContactOverlay = () => {
