@@ -447,6 +447,8 @@ const enableContactOverlay = () => {
 }
 
 const openSidebar = () => {
+    ScrollTrigger.refresh();
+
     gsap.set('body', {overflow: 'hidden'})
     gsap.set('.section-preview', {
         display: 'block'
