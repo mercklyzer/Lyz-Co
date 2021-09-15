@@ -829,6 +829,10 @@ section.intro-overlay h1{
 }
 
 @media screen and (max-width: 768px){
+    .section-preview{
+        display: none;
+    }
+
     .contact-overlay .container{
         flex-direction: column;
         align-items: flex-start;
@@ -1069,6 +1073,32 @@ section.intro-overlay h1{
 }
 
 @media screen and (max-width: 480px){
+    .sidebar > .header,
+    .sidebar > .footer{
+        flex-basis: 10%;
+    }
+    
+    .sidebar > .header > ion-icon{
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .sidebar > .body{
+        justify-content: center;
+        align-items: center;
+        flex-basis: 80%;
+        width: 100%;
+    }
+
+    .sidebar > .body > .item-wrapper > .counter{
+        font-size: 4vw;
+    }
+
+    .sidebar > .body > .item-wrapper > .item-label{
+        font-size: 8vw;
+    }
+
+
     .contact-overlay > .container > .right > .bottom{
         font-size: 2.5vw;
     }
@@ -1179,6 +1209,14 @@ section.intro-overlay h1{
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape){
+    .sidebar > .body > .item-wrapper > .item-label{
+        font-size: 6vw;
+    }
+
+    .sidebar > .body > .item-wrapper > .counter{
+        font-size: 2vw;
+    }
+
     .nav.left{
         font-size: 2vw;
     }
@@ -1193,6 +1231,11 @@ section.intro-overlay h1{
 }
 
 @media screen and (max-height: 400px) and (max-width: 1024px) and (orientation: landscape){
+    .sidebar > .footer{
+        font-size: 2vw;
+        width: 100%;
+    }
+    
     .contact-overlay > .container > .right > .top form input{
         padding: 0.2vw 0;
         font-size: 1.1vw;

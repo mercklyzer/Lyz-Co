@@ -453,10 +453,12 @@ const openSidebar = () => {
 
     t1.to('.sidebar', {
         left: 0,
+        ease: Circ.easeOut,
         duration: 0.4
     })
     .from('.sidebar > .body', {
         opacity: 0,
+        y: '20%',
         duration: 0.4
     })
 }
