@@ -448,6 +448,9 @@ const enableContactOverlay = () => {
 
 const openSidebar = () => {
     gsap.set('body', {overflow: 'hidden'})
+    gsap.set('.section-preview', {
+        display: 'block'
+    })
 
     let t1 = gsap.timeline()
 
@@ -465,6 +468,9 @@ const openSidebar = () => {
 
 const closeSidebar = () => {
     gsap.set('body', {overflow: 'auto'})
+    gsap.set('.section-preview', {
+        display: 'none'
+    })
 
     let t1 = gsap.timeline()
 
@@ -507,8 +513,17 @@ const enableSidebar = () => {
                 duration: 1
             })
         })
+
+        sidebarItem.addEventListener('click', () => {
+            closeSidebar();
+            moveTo(sidebarItem.getAttribute('destination'));
+        })
     })
 
+}
+
+const moveTo = (div) => {
+    gsap.to(window, {duration: 1, scrollTo: `#${div}`});
 }
 
 // showIntroOverlay()
