@@ -446,6 +446,69 @@ const enableContactOverlay = () => {
     close.addEventListener('click', hideContactOverlay)
 }
 
+const openSidebar = () => {
+    gsap.set('body', {overflow: 'hidden'})
+
+    let t1 = gsap.timeline()
+
+    t1.to('.sidebar', {
+        left: 0,
+        duration: 0.4
+    })
+    .from('.sidebar > .body', {
+        opacity: 0,
+        duration: 0.4
+    })
+}
+
+const closeSidebar = () => {
+    gsap.set('body', {overflow: 'auto'})
+
+    let t1 = gsap.timeline()
+
+    t1.to('.sidebar', {
+        left: '100%',
+        duration: 0.4
+    })
+}
+
+const enableSidebar = () => {
+    document.querySelector('#menu').addEventListener('click', () => {
+        openSidebar();
+    })
+
+    document.querySelector('.sidebar ion-icon').addEventListener('click', () => {
+        closeSidebar();
+    })
+
+    let bacgkroundImages = ['9310bc54', '7daf311a', '8f6da8bb', '48da48c6']
+
+    let sidebarItems = document.querySelectorAll('.sidebar > .body > .item-wrapper > .item-label')
+    sidebarItems.forEach((sidebarItem, i) => {
+
+        sidebarItem.addEventListener('mouseover', () => {
+            gsap.set('.sidebar > .section-preview', {
+                'background-image':`url(./images/${bacgkroundImages[i]}.jpg)`
+            })
+
+            gsap.to('.section-preview', {
+                width: '400px',
+                ease: Expo.easeInOut,
+                duration: 1
+            })
+        })
+
+        sidebarItem.addEventListener('mouseleave', () => {
+            gsap.to('.section-preview', {
+                width: 0,
+                ease: Expo.easeInOut,
+                duration: 1
+            })
+        })
+    })
+
+}
+
 // showIntroOverlay()
 showHero();
 showAbout();
@@ -455,3 +518,4 @@ darken();
 showContact();
 enableCircle();
 enableContactOverlay();
+enableSidebar();

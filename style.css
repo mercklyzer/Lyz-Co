@@ -172,8 +172,114 @@ section.contact-overlay{
     font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 
+.sidebar{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    padding: 4vw;
+    color: #f7f3f0;
+    background-color: #1f1f1f;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
 
+.sidebar > .section-preview{
+    position: fixed; 
+    top: 20%;
+    left: 60%;
+    height: 600px;
+    width: 0;
+    background: url('./images/9310bc54.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    overflow: hidden;
+}
 
+.sidebar > .header,
+.sidebar > .footer{
+    flex-basis: 20%;
+    width: 100%;
+}
+
+.sidebar > .body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 60%;
+    width: 50%;
+}
+
+.sidebar > .body > .item-wrapper:not(:last-child){
+    margin-bottom: 2vw;
+}
+
+.sidebar > .body > .item-wrapper > .counter{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1vw;
+    display: inline-block;
+    color: rgba(255,255,255,0.3);
+}
+
+.sidebar > .body > .item-wrapper > .item-label{
+    display: inline-block;
+    font-family: 'EB Garamond', serif;
+    font-size: 4vw;
+    cursor: pointer;
+    position: relative;
+    color: rgba(255,255,255,0.3);
+}
+
+.sidebar > .body > .item-wrapper > .item-label:before{
+    color: #f7f3f0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    content: attr(data-text);
+    width: 0;
+    transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
+}
+
+.sidebar > .body > .item-wrapper > .item-label:hover:before{
+    width: 100%;
+}
+
+.sidebar > .body > .item-wrapper > .item-label:hover + .counter{
+    color: #f7f3f0;
+}
+
+.sidebar > .footer{
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar > .footer > div{
+    flex-basis: 33.33%;
+}
+
+.sidebar > .footer > div:last-child{
+     display: flex;
+    justify-content: flex-end;
+}
+
+.sidebar > .footer > div:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar > .header{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sidebar > .header > ion-icon{
+    width: 4vw;
+    height: 4vw;
+    cursor: pointer;
+}
 
 .header-wrapper{
     height: 5vw;
