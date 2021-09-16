@@ -528,13 +528,15 @@ const moveTo = (div) => {
     gsap.to(window, {duration: 1, scrollTo: `#${div}`});
 }
 
-// showIntroOverlay()
-showHero();
-showAbout();
-showInfinity();
-showExpertise();
-darken();
-showContact();
-enableCircle();
-enableContactOverlay();
-enableSidebar();
+window.onload = () => {
+    // showIntroOverlay()
+    showHero();
+    showAbout();
+    showInfinity();
+    showExpertise();
+    darken();
+    showContact();
+    enableCircle();
+    enableContactOverlay();
+    enableSidebar();
+}
