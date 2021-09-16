@@ -529,6 +529,13 @@ const moveTo = (div) => {
     gsap.to(window, {duration: 1, scrollTo: `#${div}`});
 }
 
+const enableFooter = () => {
+    document.querySelector('#to-top').addEventListener('click', () => {
+        console.log("clicked");
+        moveTo('hero');
+    })
+}
+
 window.onload = () => {
     showIntroOverlay()
     showHero();
@@ -540,4 +547,5 @@ window.onload = () => {
     enableCircle();
     enableContactOverlay();
     enableSidebar();
+    enableFooter();
 }
