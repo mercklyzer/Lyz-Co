@@ -529,7 +529,7 @@ const moveTo = (div) => {
 }
 
 window.onload = () => {
-    // showIntroOverlay()
+    showIntroOverlay()
     showHero();
     showAbout();
     showInfinity();
