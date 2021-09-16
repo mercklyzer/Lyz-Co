@@ -296,7 +296,7 @@ section.intro-overlay h1{
     font-size: 3.5vw;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -100%);
     width: 100%;
     text-align: center;
 }
