@@ -1,4 +1,4 @@
-#Lyz-Co
+# Lyz-Co
 Lyz-Co is an accounting firm located in Rockwell, Philippines. This website shows its portfolio.
 
 ## Access At:
